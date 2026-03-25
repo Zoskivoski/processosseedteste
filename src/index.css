@@ -1,0 +1,262 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 1rem;
+  }
+
+  body.light {
+    color-scheme: light;
+
+    --background: 210 24% 97%;
+    --foreground: 214 39% 17%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 214 39% 17%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 214 39% 17%;
+
+    --primary: 210 100% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 24% 93%;
+    --secondary-foreground: 214 28% 28%;
+
+    --muted: 210 22% 93%;
+    --muted-foreground: 214 14% 42%;
+
+    --accent: 150 58% 32%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 70% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --warning: 38 93% 51%;
+    --warning-foreground: 34 88% 17%;
+
+    --border: 210 18% 84%;
+    --input: 210 18% 84%;
+    --ring: 210 100% 35%;
+
+    --glass-border: 210 22% 84%;
+    --glass-shadow: 215 45% 15%;
+
+    --pr-blue: 210 100% 35%;
+    --pr-blue-ink: 217 58% 27%;
+    --pr-green: 150 58% 32%;
+    --texture-opacity: 0.16;
+    --texture-glow-primary: 0.05;
+    --texture-glow-accent: 0.04;
+
+    --chart-1: 210 100% 35%;
+    --chart-2: 150 58% 32%;
+    --chart-3: 199 84% 55%;
+    --chart-4: 37 92% 55%;
+    --chart-5: 222 49% 45%;
+    --chart-6: 176 46% 39%;
+    --chart-7: 347 74% 56%;
+    --chart-8: 262 53% 58%;
+  }
+
+  body.dark {
+    color-scheme: dark;
+
+    --background: 218 31% 11%;
+    --foreground: 210 25% 95%;
+
+    --card: 217 27% 15%;
+    --card-foreground: 210 25% 95%;
+
+    --popover: 217 27% 16%;
+    --popover-foreground: 210 25% 95%;
+
+    --primary: 204 96% 64%;
+    --primary-foreground: 216 45% 12%;
+
+    --secondary: 216 18% 22%;
+    --secondary-foreground: 210 22% 91%;
+
+    --muted: 216 19% 19%;
+    --muted-foreground: 214 13% 69%;
+
+    --accent: 152 48% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 82% 66%;
+    --destructive-foreground: 0 0% 100%;
+
+    --warning: 39 97% 63%;
+    --warning-foreground: 31 82% 14%;
+
+    --border: 217 19% 27%;
+    --input: 217 19% 27%;
+    --ring: 204 96% 64%;
+
+    --glass-border: 217 18% 28%;
+    --glass-shadow: 220 70% 4%;
+
+    --pr-blue: 206 93% 58%;
+    --pr-blue-ink: 217 54% 16%;
+    --pr-green: 152 48% 45%;
+    --texture-opacity: 0.07;
+    --texture-glow-primary: 0.03;
+    --texture-glow-accent: 0.025;
+
+    --chart-1: 204 96% 64%;
+    --chart-2: 152 48% 45%;
+    --chart-3: 188 85% 57%;
+    --chart-4: 39 97% 63%;
+    --chart-5: 265 84% 72%;
+    --chart-6: 344 82% 64%;
+    --chart-7: 221 83% 70%;
+    --chart-8: 174 57% 49%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply bg-background;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased transition-colors duration-300;
+    min-height: 100vh;
+    font-family: "Inter", system-ui, sans-serif;
+    background-image:
+      radial-gradient(circle at top left, hsl(var(--primary) / 0.08), transparent 32%),
+      radial-gradient(circle at bottom right, hsl(var(--accent) / 0.08), transparent 28%),
+      linear-gradient(180deg, hsl(var(--background)), hsl(var(--background)));
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .glass-card {
+    background: hsl(var(--card) / 0.78);
+    border: 1px solid hsl(var(--glass-border) / 0.72);
+    box-shadow:
+      0 10px 26px -18px hsl(var(--glass-shadow) / 0.4),
+      0 1px 4px hsl(var(--glass-shadow) / 0.12);
+    backdrop-filter: blur(18px);
+  }
+
+  .glass-card-elevated {
+    background: hsl(var(--card) / 0.88);
+    border: 1px solid hsl(var(--glass-border) / 0.78);
+    box-shadow:
+      0 24px 60px -34px hsl(var(--glass-shadow) / 0.5),
+      0 8px 20px -14px hsl(var(--glass-shadow) / 0.22);
+    backdrop-filter: blur(20px);
+  }
+
+  .pr-header {
+    background: linear-gradient(135deg, hsl(var(--pr-blue)) 0%, hsl(var(--pr-blue-ink)) 100%);
+    box-shadow: 0 10px 24px -20px rgba(15, 23, 42, 0.5);
+  }
+
+  .pr-header-bar {
+    height: 3px;
+    background: linear-gradient(90deg, hsl(var(--pr-green)) 0%, hsl(var(--pr-blue)) 55%, hsl(var(--accent)) 100%);
+  }
+
+  .kpi-glow-blue {
+    box-shadow:
+      0 18px 42px -28px hsl(var(--primary) / 0.34),
+      0 0 0 1px hsl(var(--primary) / 0.08);
+  }
+
+  .kpi-glow-green {
+    box-shadow:
+      0 18px 42px -28px hsl(var(--accent) / 0.32),
+      0 0 0 1px hsl(var(--accent) / 0.08);
+  }
+
+  .kpi-glow-red {
+    box-shadow:
+      0 18px 42px -28px hsl(var(--destructive) / 0.3),
+      0 0 0 1px hsl(var(--destructive) / 0.08);
+  }
+
+  .kpi-glow-amber {
+    box-shadow:
+      0 18px 42px -28px hsl(var(--warning) / 0.34),
+      0 0 0 1px hsl(var(--warning) / 0.1);
+  }
+
+  .bg-texture {
+    background-image:
+      radial-gradient(circle at top right, hsl(var(--primary) / var(--texture-glow-primary)), transparent 32%),
+      radial-gradient(circle at bottom left, hsl(var(--accent) / var(--texture-glow-accent)), transparent 30%),
+      url("/bg-building.png");
+    background-repeat: no-repeat;
+    background-position: top right, bottom left, center bottom;
+    background-size: 34rem 34rem, 26rem 26rem, 380px;
+    opacity: var(--texture-opacity);
+    filter: saturate(0.78);
+  }
+
+  body.light .bg-texture {
+    filter: saturate(0.82) brightness(0.96);
+  }
+
+  body.dark .bg-texture {
+    filter: saturate(0.62) brightness(0.72);
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.42s ease-out both;
+  }
+
+  .animate-slide-in {
+    animation: slide-in 0.34s ease-out both;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

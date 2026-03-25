@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- TODO: Set the document title to the name of your application -->
+    <title>Processos SEED</title>
+    <meta name="description" content="Lovable Generated Project">
+    <meta name="author" content="Lovable" />
+
+    <!-- TODO: Update og:title to match your application name -->
+    
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/0bf6a1e6-117c-4c26-8440-67e9273341d7/id-preview-104b9dbf--59bb8112-640f-4bdc-ab91-8804934a8f6b.lovable.app-1774009495232.png">
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Lovable" />
+    <meta name="twitter:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/0bf6a1e6-117c-4c26-8440-67e9273341d7/id-preview-104b9dbf--59bb8112-640f-4bdc-ab91-8804934a8f6b.lovable.app-1774009495232.png">
+    <meta property="og:title" content="Processos SEED">
+  <meta name="twitter:title" content="Processos SEED">
+  <meta property="og:description" content="Lovable Generated Project">
+  <meta name="twitter:description" content="Lovable Generated Project">
+</head>
+
+  <body class="light">
+    <script>
+      (function () {
+        try {
+          var storedTheme = localStorage.getItem("processseed-theme");
+          var parsedTheme = storedTheme ? JSON.parse(storedTheme) : "light";
+          var theme = parsedTheme === "dark" ? "dark" : "light";
+          document.body.classList.remove("light", "dark");
+          document.body.classList.add(theme);
+        } catch (error) {
+          document.body.classList.remove("dark");
+          document.body.classList.add("light");
+        }
+      })();
+    </script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
